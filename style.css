@@ -231,3 +231,16 @@ body {
     opacity: 1; /* Visível quando a classe 'visible' é adicionada */
     transform: translateY(0); /* Retorna à posição original */
 }
+
+@media (max-width: 768px) {
+    .apresentacao {
+        flex-direction: column; /* Muda para coluna em telas menores */
+        align-items: center; /* Centraliza o conteúdo */
+        padding: 5%; /* Ajusta o padding */
+    }
+
+    .apresentacao_imagem {
+        width: 80%; /* Aumenta a largura da imagem */
+        max-width: 100%; /* Garante que não ultrapasse o tamanho da tela */
+    }
+}
