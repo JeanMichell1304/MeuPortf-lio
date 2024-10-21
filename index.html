@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">
+    <title>Portfolio</title>
+    <style>
+        /* Estilos para transições de entrada */
+        .apresentacao_conteudo,
+        .apresentacao_imagem {
+            opacity: 0; /* Inicialmente invisível */
+            transform: translateY(20px); /* Levemente deslocado para baixo */
+            transition: opacity 1s ease, transform 1s ease; /* Transição suave */
+        }
+        .visible {
+            opacity: 1; /* Visível quando a classe 'visible' é adicionada */
+            transform: translateY(0); /* Retorna à posição original */
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="cabecalho">
+        <nav class="cabecalho-menu">
+            <a class="cabecalho-links" href="index.html">Home</a>
+            <a class="cabecalho-links" href="About.html">Sobre Mim</a>
+            <a class="cabecalho-links" href="curriculo.html">Currículo</a>
+        </nav>
+    </header>
+    <!-- FIM DO CABEÇALHO -->
+
+    <!-- CONTEUDO PRINCIPAL -->
+    <main class="apresentacao">
+        <section class="apresentacao_conteudo">
+            <h1 class="apresentacao_titulo">Venha me conhecer melhor!
+                <strong class="titulo-bold">Desenvolvedor Front-End & Designer.</strong>
+            </h1>
+            <p class="apresentacao_texto">Olá, me chamo Jean Michell Ritter, sou desenvolvedor <strong class="texto-bold">Front-End</strong> e também <strong class="texto-bold">Designer</strong> de motion flyer.
+                Especialidades de programação em <strong class="texto-bold">HTML, CSS</strong> e <strong class="texto-bold">JavaScript.</strong> Especialidades de Design em <strong class="texto-bold">Photoshop</strong> e <strong class="texto-bold">After Effects.</strong>
+            </p>
+            <div class="apresentacao_links">
+                <h2 class="subtitulo">Acesse minhas <strong class="texto-bold">Redes</strong></h2>
+                <a class="apresentacao_links_navegacao" href="https://github.com/JeanMichell1304" target="_blank" title="Acesse meu GitHub">
+                    <img src="./Assets/github.png" alt="GitHub Logo">GitHub
+                </a>
+                <a class="apresentacao_links_navegacao" href="https://Instagram.com/MichellRitter" target="_blank" title="Acesse meu Instagram">
+                    <img src="./Assets/instagram.png" alt="Instagram Logo">Instagram
+                </a>
+                <a class="apresentacao_links_navegacao" href="https://www.linkedin.com/in/jean-michell-ritter-dos-santos-7b632b27a" target="_blank" title="Acesse meu LinkedIn">
+                    <img src="./Assets/linkedin.png" alt="LinkedIn Logo">LinkedIn
+                </a>
+                
+            </div>
+        </section>
+        <img class="apresentacao_imagem" src="./Assets/foto.jpg" alt="Minha Foto" style="width: 50%;">
+    </main>
+    <!-- FIM CONTEUDO PRINCIPAL -->
+
+    <footer class="rodape">Desenvolvido por Jean Michell Ritter.</footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const conteudo = document.querySelector('.apresentacao_conteudo');
+            const imagem = document.querySelector('.apresentacao_imagem');
+
+            if (conteudo) {
+                conteudo.classList.add('visible'); // Adiciona a classe para animar a entrada do texto
+            }
+            if (imagem) {
+                imagem.classList.add('visible'); // Adiciona a classe para animar a entrada da imagem
+            }
+        });
+
+        window.addEventListener('scroll', function() {
+            const elementos = document.querySelectorAll('.apresentacao_conteudo, .apresentacao_imagem');
+            const scrollPosition = window.scrollY + window.innerHeight;
+
+            elementos.forEach(el => {
+                const elPosition = el.getBoundingClientRect().top + window.scrollY;
+                const distance = scrollPosition - elPosition;
+                const opacity = Math.max(0, Math.min(1, distance / 200)); // Limita a opacidade entre 0 e 1
+                el.style.opacity = opacity; // Ajusta a opacidade
+            });
+        });
+    </script>
+
+</body>
+</html>

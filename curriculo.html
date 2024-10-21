@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">
+    <title>Currículo de Jean Michell</title>
+    <style>
+        .apresentacao_conteudo,
+        .apresentacao_imagem {
+            opacity: 0; /* Inicialmente invisível */
+            transform: translateY(20px); /* Levemente deslocado para baixo */
+            transition: opacity 0.5s ease, transform 0.5s ease; /* Transição suave */
+        }
+        .visible {
+            opacity: 1; /* Visível quando a classe 'visible' é adicionada */
+            transform: translateY(0); /* Retorna à posição original */
+        }
+
+        .apresentacao_curri {
+            padding: 5% 15%;
+            display: flex;
+            align-items: center; /* Centraliza o conteúdo */
+            gap: 40px; /* Espaço entre os elementos */
+        }
+
+        .apresentacao_imagem {
+            width: 100%; /* Ajusta a largura da imagem */
+            max-width: 500px; /* Aumenta a largura máxima da imagem */
+            margin-top: 20px; /* Espaço acima da imagem */
+            border-radius: 8px; /* Arredonda os cantos da imagem */
+        }
+    </style>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <nav class="cabecalho-menu">
+            <a class="cabecalho-links" href="index.html">Home</a>
+            <a class="cabecalho-links" href="About.html">Sobre Mim</a>
+            <a class="cabecalho-links" href="curriculo.html">Currículo</a>
+        </nav>
+    </header>
+
+    <main class="apresentacao_curri">
+        <section class="apresentacao_conteudo">
+            <h1 class="apresentacao_titulo"><strong class="titulo-bold_curri">Currículo</strong></h1>
+            <ul>
+                <li class="apresentacao_texto"><strong class="titulo-bold">Nome: </strong> Jean Michell Ritter dos Santos</li>
+                <li class="apresentacao_texto"><strong class="titulo-bold">Cidade: </strong> Terra de Areia-RS</li>
+                <li class="apresentacao_texto"><strong class="titulo-bold">Endereço: </strong> Rua José Guimarães</li>
+            </ul>
+
+            <h2 class="apresentacao_titulo">Experiências</h2>
+            <ul class="apresentacao_texto">
+                <li class="apresentacao_texto"><strong class="titulo-bold">Lokos Parque LTDA (2017 - 2018):</strong> Monitor de brinquedos do parque/Atendimento ao público.</li>
+                <li class="apresentacao_texto"><strong class="titulo-bold">Supermercado Ofertão (2019 - 2022):</strong> Supridor/Motorista de entregas.</li>
+                <li class="apresentacao_texto"><strong class="titulo-bold">ExtremaMusicOn (2022 - 2023):</strong> Social Media/Designer de flyers.</li>
+                <li class="apresentacao_texto"><strong class="titulo-bold">Gráfica Triangulo (2023 - 2023):</strong> Vendedor Externo.</li>
+                <li class="apresentacao_texto"><strong class="titulo-bold">Estado do Rio Grande do Sul:</strong> Agente Educacional II.</li>
+            </ul>
+
+            <h2 class="apresentacao_titulo">Estudos</h2>
+            <ul class="apresentacao_texto">
+                <li class="apresentacao_texto">Lógica de programação - <strong class="titulo-bold">Eu Curso</strong> <a class="apresentacao_links_curri" href="https://aluno.eucurso.com.br/certificado?id=27475">Certificado</a></li>
+                <li class="apresentacao_texto">HTML Básico - <strong class="titulo-bold">Eu Curso</strong> <a class="apresentacao_links_curri" href="https://aluno.eucurso.com.br/certificado?id=26635">Certificado</a></li>
+                <li class="apresentacao_texto">HTML Avançado - <strong class="titulo-bold">Eu Curso</strong> <a class="apresentacao_links_curri" href="https://aluno.eucurso.com.br/certificado?id=26636">Certificado</a></li>
+                <li class="apresentacao_texto">Delphy Básico - <strong class="titulo-bold">Udemy Cursos</strong> <a class="apresentacao_links_curri" href="https://www.udemy.com/certificate/UC-019000fc-c9cb-4840-a14a-26af16b45ef3/">Certificado</a></li>
+                <li class="apresentacao_texto">Cursos Alura - <strong class="titulo-bold">Todos os meus Certificados</strong> <a class="apresentacao_links_curri" href="https://cursos.alura.com.br/user/michell2303jb/fullCertificate/f5abc9a1534f6f128073ae7f3996a3b2">Certificado</a></li>
+            </ul>
+
+            <div class="apresentacao_links">
+                <h2 class="subtitulo">Acesse minhas <strong class="texto-bold">Redes</strong></h2>
+                <a class="apresentacao_links_navegacao" href="https://github.com/JeanMichell1304" target="_blank">
+                    <img src="./Assets/github.png" alt="GitHub Logo">GitHub</a>
+                <a class="apresentacao_links_navegacao" href="https://Instagram.com/MichellRitter" target="_blank">
+                    <img src="./Assets/instagram.png" alt="Instagram Logo">Instagram</a>
+                <a class="apresentacao_links_navegacao" href="https://www.linkedin.com/in/jean-michell-ritter-dos-santos-7b632b27a" target="_blank">
+                    <img src="./Assets/linkedin.png" alt="LinkedIn Logo">LinkedIn</a>
+            </div>
+        </section>
+
+        <img class="apresentacao_imagem" src="./Assets/foto.jpg" alt="Minha Foto" style="width: 80%; max-width: 500px;">
+    </main>
+
+    <footer class="rodape">Desenvolvido por Jean Michell Ritter.</footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const conteudo = document.querySelector('.apresentacao_conteudo');
+            const imagem = document.querySelector('.apresentacao_imagem');
+            if (conteudo) {
+                conteudo.classList.add('visible'); // Adiciona a classe para animar a entrada do texto
+            }
+            if (imagem) {
+                imagem.classList.add('visible'); // Adiciona a classe para animar a entrada da imagem
+            }
+        });
+    </script>
+</body>
+</html>

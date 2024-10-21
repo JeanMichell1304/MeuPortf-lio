@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">
+    <title>Jean Michell - Sobre Mim</title>
+    <style>
+        /* Estilos para transições de entrada */
+        .apresentacao_conteudo,
+        .apresentacao_imagem {
+            opacity: 0; /* Inicialmente invisível */
+            transform: translateY(20px); /* Levemente deslocado para baixo */
+            transition: opacity 0.5s ease, transform 0.5s ease; /* Transição suave */
+        }
+        .visible {
+            opacity: 1; /* Visível quando a classe 'visible' é adicionada */
+            transform: translateY(0); /* Retorna à posição original */
+        }
+
+        /* Estilos da apresentação */
+        .apresentacao {
+            padding: 5% 15%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 82px;
+            
+        }
+        
+    </style>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <nav class="cabecalho-menu">
+            <a class="cabecalho-links" href="index.html">Home</a>
+            <a class="cabecalho-links" href="About.html">Sobre Mim</a>
+            <a class="cabecalho-links" href="curriculo.html">Currículo</a>
+        </nav>
+    </header>
+
+    <main class="apresentacao">
+        <section class="apresentacao_conteudo">
+            <h1 class="apresentacao_titulo">Jean Michell Ritter</h1>
+            <p class="apresentacao_texto">Me chamo <strong class="texto-bold">Jean Michell Ritter dos Santos</strong>, tenho 25 anos (em 2024), sou estudante de programação e tenho conhecimentos em <strong class="texto-bold">Design</strong> com <strong class="texto-bold">Photoshop</strong> e <strong class="texto-bold">After Effects</strong>. Criei este portfólio com ajuda do curso do Instituto Caldeira | Alura.</p>
+            <p class="apresentacao_texto">Estou à procura de um emprego/estágio nesta área tão maravilhosa! Atualmente tenho conhecimento em <strong class="texto-bold">HTML, CSS e o básico de JavaScript</strong>. Tenho como <strong class="texto-bold">competências</strong> Trabalho em Equipe, Resiliência, Autodidatismo, Aprendizagem Rápida e dinâmica, Atendimento ao Público, Inglês Intermediário/Avançado, Flexibilidade e conhecimento de Informática Avançada. Sou apaixonado por Informática desde criança.</p>
+            <div class="apresentacao_links">
+                <h2 class="subtitulo">Acesse minhas <strong class="texto-bold">Redes</strong></h2>
+                <a class="apresentacao_links_navegacao" href="https://github.com/JeanMichell1304" target="_blank" title="Acesse meu GitHub">
+                    <img src="./Assets/github.png" alt="GitHub Logo">GitHub
+                </a>
+                <a class="apresentacao_links_navegacao" href="https://Instagram.com/MichellRitter" target="_blank" title="Acesse meu Instagram">
+                    <img src="./Assets/instagram.png" alt="Instagram Logo">Instagram
+                </a>
+                <a class="apresentacao_links_navegacao" href="https://www.linkedin.com/in/jean-michell-ritter-dos-santos-7b632b27a" target="_blank" title="Acesse meu LinkedIn">
+                    <img src="./Assets/linkedin.png" alt="LinkedIn Logo">LinkedIn
+                </a>
+                
+            </div>
+        </section>
+        <img class="apresentacao_imagem" src="./Assets/foto.jpg" alt="Minha Foto" style="width: 50%;">
+    </main>
+
+    <footer class="rodape">Desenvolvido por Jean Michell Ritter.</footer>
+
+    <script>
+        // Função para adicionar a classe 'visible' aos elementos
+        function showElements() {
+            const conteudo = document.querySelector('.apresentacao_conteudo');
+            const imagem = document.querySelector('.apresentacao_imagem');
+
+            if (conteudo) {
+                conteudo.classList.add('visible'); // Adiciona a classe para animar a entrada do texto
+            }
+            if (imagem) {
+                imagem.classList.add('visible'); // Adiciona a classe para animar a entrada da imagem
+            }
+        }
+
+        // Executa a função quando o DOM está completamente carregado
+        document.addEventListener('DOMContentLoaded', showElements);
+
+        // Efeito de opacidade em rolagem
+        window.addEventListener('scroll', function() {
+            const elementos = document.querySelectorAll('.apresentacao_conteudo, .apresentacao_imagem');
+            const scrollPosition = window.scrollY + window.innerHeight;
+
+            elementos.forEach(el => {
+                const elPosition = el.getBoundingClientRect().top + window.scrollY;
+                const distance = scrollPosition - elPosition;
+                const opacity = Math.max(0, Math.min(1, distance / 200)); // Limita a opacidade entre 0 e 1
+                el.style.opacity = opacity; // Ajusta a opacidade
+            });
+        });
+    </script>
+</body>
+</html>

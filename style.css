@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+:root {
+    --cor-primaria: #000;
+    --cor-secundaria: #f6f6f6;
+    --cor-terciaria: rgb(7, 255, 7);
+    --cor-hover: #272727;
+    --font-primaria: "krona-one", sans-serif;
+    --font-secundaria: "montserrat", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Certifique-se de que o box-sizing esteja aplicado */
+}
+
+body {
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+}
+
+/* CABEÇALHO */
+
+.cabecalho {
+    padding: 2% 0 0 15%;
+}
+
+.cabecalho-menu {
+    display: flex;
+    gap: 80px;
+}
+
+.cabecalho-links {
+    font-family: var(--font-secundaria);
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--cor-terciaria);
+    text-decoration: none;
+    transition: color 2s; /* Suaviza a transição da cor */
+}
+
+.cabecalho-links:hover {
+    background-color: var(--cor-terciaria);
+    border-radius: 5%;
+    padding: 2px;
+    color: var(--cor-secundaria);
+}
+
+/* FIM CABEÇALHO */
+
+/* CONTEÚDO PRINCIPAL */
+
+.texto-bold {
+    color: var(--cor-terciaria);
+}
+
+.apresentacao {
+    padding: 5% 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 82px;
+}
+
+.apresentacao_conteudo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.apresentacao_titulo {
+    font-size: 2.25rem;
+    font-family: var(--font-primaria);
+}
+
+.titulo-bold {
+    color: var(--cor-terciaria);
+}
+
+.apresentacao_texto {
+    font-size: 1.5rem;
+    font-family: var(--font-secundaria);
+}
+
+.apresentacao_links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    justify-content: space-between;
+}
+
+.subtitulo {
+    font-family: var(--font-secundaria);
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+.apresentacao_links_navegacao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 378px;
+    border: 2px solid var(--cor-secundaria);
+    border-radius: 8px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 21.5px 0;
+    text-decoration: none;
+    color: var(--cor-secundaria);
+    font-family: var(--font-secundaria);
+    transition: background-color 0.5s, transform 0.5s; /* Suaviza transições */
+}
+
+.apresentacao_links_navegacao:hover {
+    background-color: var(--cor-hover);
+    transform: scale(1.05); /* Aumenta ligeiramente o tamanho no hover */
+}
+
+/* FIM CONTEÚDO PRINCIPAL */
+
+/* RODAPÉ */
+.rodape {
+    background-color: var(--cor-terciaria);
+    color: var(--cor-primaria);
+    padding: 24px;
+    text-align: center;
+    font-family: var(--font-secundaria);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+/* FIM RODAPÉ */
+
+.apresentacao_imagem {
+    width: 50%;
+    opacity: 0; /* Inicialmente invisível */
+    transform: translateY(20px); /* Levemente deslocado para baixo */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transição suave */
+}
+
+.apresentacao_imagem.visible {
+    opacity: 1; /* Visível quando a classe 'visible' é adicionada */
+    transform: translateY(0); /* Retorna à posição original */
+}
+
+
+
+/* STYLE CURRICULO */
+.apresentacao_curri {
+    padding: 5% 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.titulo-bold_curri {
+    color: var(--cor-secundaria);
+}
+
+.subtitulo_curriculo {
+    font-family: var(--font-secundaria);
+    font-weight: 400;
+    font-size: 1.25rem;
+}
+
+.apresentacao_links-curri {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: space-between;
+    text-decoration: none;
+}
+
+.apresentacao_links_curri {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 200px;
+    border: 2px solid var(--cor-secundaria);
+    border-radius: 8px;
+    font-size: 1.125rem;
+    font-weight: 600;
+    padding: 16px 0;
+    text-decoration: none;
+    color: var(--cor-secundaria);
+    font-family: var(--font-secundaria);
+    transition: background-color 0.5s, transform 0.5s; /* Suaviza transições */
+}
+
+.apresentacao_links_curri:hover {
+    background-color: #272727;
+    transform: scale(1.05); /* Aumenta ligeiramente o tamanho no hover */
+}
+
+@media (max-width: 1200px) {
+    .apresentacao_curri {
+        padding: 5%;
+        flex-direction: column-reverse;
+    }
+
+    .cabecalho {
+        padding: 5%;
+    }
+
+    .cabecalho-menu {
+        justify-content: center;
+    }
+
+    .apresentacao {
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+
+    .apresentacao_conteudo {
+        width: auto;
+    }
+}
+
+.apresentacao_conteudo, .apresentacao_imagem {
+    opacity: 0; /* Inicialmente invisível */
+    transform: translateY(20px); /* Levemente deslocado para baixo */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transição suave */
+}
+.apresentacao_conteudo.visible, .apresentacao_imagem.visible {
+    opacity: 1; /* Visível quando a classe 'visible' é adicionada */
+    transform: translateY(0); /* Retorna à posição original */
+}
